@@ -11,6 +11,6 @@ http://www.omdbapi.com/
 Python Flask
 Bootstrap
 
-# Programing
-HTLM, CSS
+# Programing (UI)
+HTLM, CSS, boostrap 4
 
