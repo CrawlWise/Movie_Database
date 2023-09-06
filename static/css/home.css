@@ -1,0 +1,30 @@
+.main-container{
+    border: solid 2px yellow;
+    margin-top: 80px;
+}
+
+/* search Section on the html file */
+.search_section{
+    border: solid red 2px;
+    text-align: center;
+}
+.search_section > h4{
+    background-color: grey;
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+/* content Section on the html file */
+.display_information{
+    border: solid green 2px;
+}
+
+.movie-details{
+    border: solid 2px red;
+}
+.movie-detail-image{
+    background-color: ping;
+    background-color: orange;
+}

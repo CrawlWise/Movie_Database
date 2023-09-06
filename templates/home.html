@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+<!-- Declaring the body of my information-->
+{% block content %}
+<div class="container main-container">
+	<div class="content-container row">
+		<!--Search Section-->
+		<div class="col-md-4 search_section">
+			<h4>
+				Search your favorite movie below
+			</h4>
+			<form>
+				<div class="form-group">
+					<input type="text" class="form-control" id="search"><br>
+					<button type="submit" id="submit_btn" class="btn btn-primary">Search</button>
+				</div>
+			</form>
+		</div>
+		
+		<!--display Section-->
+		<div class="col-md-8 display_information">
+			<div class="movie-details row">
+				<div class="col-md-4 movie-detail-image">image here</div>
+				<div class="col-md-8 movie-details-information">
+					<table class="table table-borderless table-sm">
+						<thead>
+							<tr>
+								<th scope="col">title</th>
+							</tr>
+							<tr>
+								<td colspan="2">Follows Ember and Wade, in a city where fire-, water-, land- and air-residents live together.</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="">Types</th>
+								<td>Movie</td>
+							</tr>
+							<tr>
+								<th scope="">Released</th>
+								<td>2023</td>
+							</tr>
+							<tr>
+								<th scope="">Runtime</th>
+								<td>101 min</td>
+							</tr>
+							<tr>
+								<th scope="">genre</th>
+								<td>movie</td>
+							</tr>
+							<tr>
+								<th scope="">Country</th>
+								<td>United State</td>
+							</tr>
+							<tr>
+								<th scope="">Directory</th>
+								<td>Won hu</td>
+							</tr>
+							<tr>
+								<th scope="">Writer</th>
+								<td>Damy, Wisdom, Albert</td>
+							</tr>
+							<tr>
+								<th scope="">Actors</th>
+								<td>name 1, Name2, Name 3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
