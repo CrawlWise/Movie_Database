@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+<!-- Declaring the body of my information-->
+{% block content %}
+<div class="container main-container">
+	<div class="content-container row">
+		<!--Search Section-->
+		<div class="col-md-4 search_section">
+			<form method="POST" action=" {{ url_for ('home') }}">
+				<div class="form-group">
+					<input type="text" class="form-control" id="search" name="movie_search"><br>
+					<button type="submit" id="submit_btn" class="btn btn-primary">Search</button>
+				</div>
+			</form>
+			
+			<div class="alert-danger Error-message">{{ response }}</div>
+		</div>
+		
+		<!--display Section-->
+		<div class="col-md-8 display_information">
+			<div class="movie-details row">
+				<div class="col-md-4 movie-detail-image"><img class="img-fluid" src={{ image }}  alt="movie_image"/></div>
+				<div class="col-md-8 movie-details-information">
+					<table class="table table-borderless table-sm table-dark">
+						<thead>
+							<tr>
+								<th scope="col"><h4>{{ title }}</h4></th>
+							</tr>
+							<tr><td>{{ rated }}</td></tr>
+							<tr>
+								<td colspan="2"><p>{{ plot }}</p></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="">Types</th>
+								<td><p>{{ type }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Released</th>
+								<td><p>{{ released_date }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Runtime</th>
+								<td><p>{{ movie_duration }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Genre</th>
+								<td><p>{{ genre }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Country</th>
+								<td><p>{{ country }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Director</th>
+								<td><p>{{ director }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Writer</th>
+								<td><p>{{ writer }}</p></td>
+							</tr>
+							<tr>
+								<th scope="">Actors</th>
+								<td><p>{{ actors }}</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
