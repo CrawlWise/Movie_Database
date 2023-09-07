@@ -10,63 +10,63 @@
 	<div class="content-container row">
 		<!--Search Section-->
 		<div class="col-md-4 search_section">
-			<h4>
-				Search your favorite movie below
-			</h4>
-			<form>
+			<form method="POST" action=" {{ url_for ('home') }}">
 				<div class="form-group">
-					<input type="text" class="form-control" id="search"><br>
+					<input type="text" class="form-control" id="search" name="movie_search"><br>
 					<button type="submit" id="submit_btn" class="btn btn-primary">Search</button>
 				</div>
 			</form>
+			
+			<div class="alert-danger Error-message">{{ response }}</div>
 		</div>
 		
 		<!--display Section-->
 		<div class="col-md-8 display_information">
 			<div class="movie-details row">
-				<div class="col-md-4 movie-detail-image">image here</div>
+				<div class="col-md-4 movie-detail-image"><img class="img-fluid" src={{ image }}  alt="movie_image"/></div>
 				<div class="col-md-8 movie-details-information">
-					<table class="table table-borderless table-sm">
+					<table class="table table-borderless table-sm table-dark">
 						<thead>
 							<tr>
-								<th scope="col">title</th>
+								<th scope="col"><h4>{{ title }}</h4></th>
 							</tr>
+							<tr><td>{{ rated }}</td></tr>
 							<tr>
-								<td colspan="2">Follows Ember and Wade, in a city where fire-, water-, land- and air-residents live together.</td>
+								<td colspan="2"><p>{{ plot }}</p></td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th scope="">Types</th>
-								<td>Movie</td>
+								<td><p>{{ type }}</p></td>
 							</tr>
 							<tr>
 								<th scope="">Released</th>
-								<td>2023</td>
+								<td><p>{{ released_date }}</p></td>
 							</tr>
 							<tr>
 								<th scope="">Runtime</th>
-								<td>101 min</td>
+								<td><p>{{ movie_duration }}</p></td>
 							</tr>
 							<tr>
-								<th scope="">genre</th>
-								<td>movie</td>
+								<th scope="">Genre</th>
+								<td><p>{{ genre }}</p></td>
 							</tr>
 							<tr>
 								<th scope="">Country</th>
-								<td>United State</td>
+								<td><p>{{ country }}</p></td>
 							</tr>
 							<tr>
-								<th scope="">Directory</th>
-								<td>Won hu</td>
+								<th scope="">Director</th>
+								<td><p>{{ director }}</p></td>
 							</tr>
 							<tr>
 								<th scope="">Writer</th>
-								<td>Damy, Wisdom, Albert</td>
+								<td><p>{{ writer }}</p></td>
 							</tr>
 							<tr>
 								<th scope="">Actors</th>
-								<td>name 1, Name2, Name 3</td>
+								<td><p>{{ actors }}</p></td>
 							</tr>
 						</tbody>
 					</table>
